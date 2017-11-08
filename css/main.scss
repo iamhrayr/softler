@@ -1,0 +1,483 @@
+// variables
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Roboto Slab', serif;
+$container: 1070px;
+$font-size: 16px;
+
+
+$color-input-bg: #ececec;
+$color-text: #333;
+$grey: #d4d4d4;
+$red: #d9372c;
+$color-secondary: null;
+
+$image-folder: '../img/';
+
+// Grid system variables
+$cols-count: 12 !default;
+$gutter-width: 1.5rem !default;
+$small-screen-up: 679px !default;
+$medium-screen-up: 961px !default;
+$large-screen-up: 1171px !default;
+$small-screen: 678px !default;
+$medium-screen: 960px !default;
+$large-screen: 1170px !default;
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+$extra-large-and-up: "only screen and (min-width : #{$large-screen-up})" !default;
+$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+
+
+
+// mixins
+@mixin center-block {
+	margin-left: auto;
+	margin-right: auto;
+}
+@mixin flex {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+@mixin box-sizing($prop) {
+	-webkit-box-sizing: $prop;
+	-ms-box-sizing: $prop;
+	box-sizing: $prop;
+}
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin square($size) {
+	width: $size;
+	height: $size;
+}
+@mixin circle($size) {
+	@include square($size); 
+	border-radius: $size/2;
+}
+@mixin transform($prop...) {
+	-webkit-transform: $prop;
+	-moz-transform: $prop;
+	-ms-transform: $prop;
+	-o-transform: $prop;
+	transform: $prop;
+}
+@mixin transition($prop...) {
+	-webkit-transition: $prop;
+	-moz-transition: $prop;
+	-ms-transition: $prop;
+	-o-transition: $prop;
+	transition: $prop;
+}
+@mixin bg-cover {
+	background-size: cover;
+	background-position: center;
+}
+@mixin bg-image($url, $cover: null) {
+	@if $cover == 'cover' {
+		@include bg-cover;
+	}
+	background-image: url($image-folder + $url);
+}
+
+
+// imports
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+@import 'normalize';
+@import './grid';
+
+
+
+
+
+
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: $font-primary;
+	font-size: $font-size;
+	font-weight: 300;
+	line-height: 1.5;
+	min-width: 1070px;
+	background-color: #f7f7f7;
+}
+.container {
+	@include center-block;
+	width: $container;
+	&.container-sm {
+		width: $container * .6;
+	}
+}
+.clearfix {
+	clear: both;
+}
+button {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	background-color: transparent; 
+	cursor: pointer;
+}
+hr {
+	border: none;
+	border-top: solid 1px #dbdbdb;
+}
+figure {
+	margin: 0;
+}
+
+.img-responsive	{
+	width: 100%;
+}
+.full-width {
+	width: 100%;
+}
+.half-width {
+	width: 50%;
+}
+.one-of-four-width {
+	width: 25%;
+}
+.three-of-four-width {
+	width: 75%;
+}
+.center-block {
+	@include center-block;
+}
+.list-unstyled {
+	padding-left: 0;
+	list-style-type: none;
+}
+.bg-cover {
+	@include bg-cover;
+}
+[class^="icon-"], 
+[class*=" icon-"] {
+    height: 32px;
+    width: 32px;
+    display: inline-block; 
+    fill: currentColor; 
+}
+.pull-left {
+	float: left;
+}
+.pull-right {
+	float: right;
+}
+
+
+// display
+.block {
+	display: block;
+}
+.inline {
+	display: inline;
+}
+.inline-block {
+	display: inline-block;
+}
+
+.flex {
+	display: flex;
+}
+.align-center {
+	align-items: center;
+}
+.space-between {
+	justify-content: space-between;
+}
+.space-around {
+	justify-content: space-around;
+}
+.equal-items>* {
+	flex-grow: 1;
+    // flex-basis: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.bg-red {
+	background-color: $red;
+}
+.red {
+	color: $red;
+}
+.bg-white {
+	background-color: #fff;
+}
+.white {
+	color: #fff;
+}
+
+
+// Typography
+h1, h2, h3 {
+	font-family: $font-secondary;
+}
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.uppercase {
+	text-transform: uppercase; 
+}
+.lowercase {
+	text-transform: lowercase; 
+}
+.small, small {
+	font-size: .8em;
+}
+.fs-xs {
+	font-size: 12px;
+}
+.fs-sm {
+	font-size: 14px;
+}
+.fs-normal {
+	font-size: $font-size;
+}
+.fs-md {
+	font-size: 18px;
+}
+.fs-lg {
+	font-size: 20px;
+}
+.fs-xl {
+	font-size: 22px;
+}
+
+.fw-thin {
+	font-weight: 100;
+}
+.fw-light {
+	font-weight: 300;
+}
+.fw-normal {
+	font-weight: 400;
+}
+.fw-medium {
+	font-weight: 500;
+}
+.fw-bold {
+	font-weight: 700;
+}
+.fw-black {
+	font-weight: 900;
+}
+
+.white {
+	color: #fff;
+}
+
+
+// Shadows
+
+
+
+
+// Spacers 
+$step: 0;
+@while $step <= 150 {
+	.mt-#{$step} {
+		margin-top: #{$step}px;
+	}
+	.pt-#{$step} {
+		padding-top: #{$step}px;
+	}
+	.mb-#{$step} {
+		margin-bottom: #{$step}px;
+	}
+	.pb-#{$step} {
+		padding-bottom: #{$step}px;
+	}
+	.ml-#{$step} {
+		margin-left: #{$step}px;
+	}
+	.pl-#{$step} {
+		padding-left: #{$step}px;
+	}
+	.mr-#{$step} {
+		margin-right: #{$step}px;
+	}
+	.pr-#{$step} {
+		padding-right: #{$step}px;
+	}
+	.mx-#{$step} {
+		margin-left: #{$step}px;
+		margin-right: #{$step}px;
+	}
+	.px-#{$step} {
+		padding-left: #{$step}px;
+		padding-right: #{$step}px;
+	}
+	.my-#{$step} {
+		margin-top: #{$step}px;
+		margin-bottom: #{$step}px;
+	}
+	.py-#{$step} {
+		padding-top: #{$step}px;
+		padding-bottom: #{$step}px;
+	}
+	.m-#{$step} {
+		margin: #{$step}px;
+	}
+	.p-#{$step} {
+		padding: #{$step}px;
+	}
+	$step: $step + 5;
+}
+
+
+// Button styles
+.btn {
+	// @include border-radius(99px);
+	border-radius: 99px;
+	padding: 10px 30px;
+	font-size: 16px;
+	text-decoration: none;
+	color: $color-text;
+	font-weight: 400;
+	display: inline-block;
+	&.btn-md {
+		padding: 12px 60px;
+		font-size: 20px;
+	}
+	&.btn-lg {
+		padding: 15px 60px;
+		font-size: 20px;
+	}
+	&.red {
+		@extend .red;
+	}
+	&.white {
+		@extend .white;
+	}
+}
+
+header {
+	.hamburger-btn {
+		color: #fff;
+	}
+}
+
+footer {
+	background-color: #323139;
+}
+
+
+
+
+
+/*
+ * Homepage
+ */
+.home-hero {
+	background-image: linear-gradient(90deg, #b01b20, #490e3d);
+	padding: 50px 0 100px;
+	position: relative;
+	&:after {
+		content: '';
+		background: url(../img/curve-overlay.png);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 60px; 
+		background-size: 100% 100%;
+	}
+}
+.hero-content { 
+	margin-top: 200px;
+	color: #fff;
+	h1 {
+		font-size: 54px;
+		line-height: 1.1;
+	}
+}
+.section-title {
+	max-width: 768px;
+	padding-left: 85px;
+	position: relative;
+	margin-bottom: 110px;
+	&:after {
+		content: '';
+		position: absolute;
+		left: 4px;
+		top: 20px;
+		width: 50px;
+		height: 3px;
+		background-color: $red;
+	}
+	&.text-right {
+		margin-left: auto;
+		padding-right: 85px;
+		padding-left: 0;
+		&:after {
+			content: '';
+			position: absolute;
+			right: 4px;
+			left: initial;
+		}
+	}
+	h3 {
+		font-size: 42px;
+		font-weight: 600;
+		color: $red;
+		margin: 0;
+		line-height: 1;
+	}
+	p {
+		font-size: 20px;
+		font-weight: 300;
+	}
+}
+.card-wrap {
+	border-radius: 5px;
+	box-shadow: 0 3px 22px 0 rgba(0,0,0,.11);
+	padding: 50px 35px;
+	background-color: #fff;
+}
+.portfolio-list {
+	@extend .flex;
+	flex-wrap: wrap;
+	> * {
+		flex: 0 0 33.3333%;
+		img {
+			vertical-align: middle;
+			width: 100%;
+		}
+	}
+}
+
+.technologies-list {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	li {
+		flex: 0 0 16.66667%;
+		border-right: solid 1px $grey;
+		border-bottom: solid 1px $grey;
+		&:nth-child(6n) {
+			border-right: none;
+		}
+		&:nth-child(6n) ~ li {
+			border-bottom: none;
+		}
+	}
+}
