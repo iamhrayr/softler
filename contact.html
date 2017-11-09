@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<link href="https://file.myfontastic.com/3gvcFtnrABfPXimB2v9tVQ/icons.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<section class="page-hero bottom-space" style="background-image: url(https://pixabay.com/get/eb30b4072cf4013ecd1f430def4e4096fe76e7d419b3154792f3c5/laptop-2558400.jpg);">
+		<header>
+			<div class="container flex align-center space-between">
+				<a href="#" class="">
+					<img src="img/logo-header.png" alt="">
+				</a>
+				<nav>
+					<button class="hamburger-btn"><svg class="icon-bars"><use xlink:href="#icon-bars"></use></svg></button>
+				</nav>
+			</div>
+		</header>
+		<div class="container">
+			<div class="col-row">
+				<div class="hero-content text-center col l8 m12 offset-l2 offset-m2">
+					<h1>Get in Touch With Us</h1>
+					<p class="fs-lg mb-50 black">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque vitae leo tempor erat euismod semper quis eu libero. Phasellus ullamcorper enim et faucibus cursus. </p>
+				</div>
+			</div>
+		</div>
+		<div id="google-map"></div>
+	</section>
+
+	<section class="">
+		<div class="container">
+			<div class="portfolio-box">
+				<div class="col-row">
+					<div class="col l4 m6 s12 push-l8 push-m6 push-s0">
+						<h4 class="fs-xl fw-md">Contact Information</h4>
+						<ul class="list-unstyled">
+							<li class="flex mb-20">
+								<svg class="icon-map-pin-streamline fill-grey-darker"><use xlink:href="#icon-map-pin-streamline"></use></svg>
+								<span class="pl-20">Lorem ipsum 17, Yereva</span>
+							</li>
+							<li class="flex mb-20">
+								<svg class="icon-email-mail-streamline fill-grey-darker"><use xlink:href="#icon-email-mail-streamline"></use></svg>
+								<span class="pl-20">contact@loremipsum.com</span>
+							</li>
+							<li class="flex mb-20">
+								<svg class="icon-phone-1 fill-grey-darker"><use xlink:href="#icon-phone-1"></use></svg>
+								<span class="pl-20">(431) 322 4475</span>
+							</li>
+						</ul>
+					</div>
+					<div class="col l8 m6 s12 pull-l4 pull-m6 pull-s0">
+						<h4 class="fs-xl fw-md">Send a message</h4>
+						<form class="pb-50">
+							<div class="col-row mb-40">
+								<div class="col l6">
+									<div class="form-row">
+										<label class="form-label">Name:</label>
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="col l6">
+									<div class="form-row">
+										<label class="form-label">Email:</label>
+										<input type="text" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="col-row">
+								<div class="col l12 mb-40">
+									<div class="form-row">
+										<label class="form-label">Subject:</label>
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="col l12">
+									<div class="form-row">
+										<label class="form-label">Message:</label>
+										<textarea class="form-control" rows="8"></textarea>
+									</div>
+								</div>
+							</div>
+							<button type="submit" class="btn bg-red white">Send</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="py-80">
+		<div class="container">
+			<div class="col-row">
+				<div class="col l5 s12">
+					<p class="mb-35">Aliquid tenetur, delectus quidem dolorum illum sunt magni id nisi sequi sed omnis et accusamus, aliquam consequatur minus, quaerat! Officiis, adipisci, quaerat!</p>
+					<nav class="footer-nav">
+						<a href="#">Home</a>
+						<span class="mx-10">/</span>
+						<a href="#">Portfolio</a>
+						<span class="mx-10">/</span>
+						<a href="#">Contact</a>
+						<span class="mx-10">/</span>
+						<a href="#">About</a>
+					</nav>
+				</div>
+				<div class="col l7 s12 text-right">
+					<img src="img/logo-footer.png" alt="">
+					<div class="footer-socials mt-20">
+						<a href="#" class="ml-5">
+							<svg class="icon-facebook44"><use xlink:href="#icon-facebook44"></use></svg>
+						</a>
+						<a href="#" class="ml-5">
+							<svg class="icon-twitter37"><use xlink:href="#icon-twitter37"></use></svg>
+						</a>
+						<a href="#" class="ml-5">
+							<svg class="icon-linkedin21"><use xlink:href="#icon-linkedin21"></use></svg>
+						</a>
+						<a href="#" class="ml-5">
+							<svg class="icon-google110"><use xlink:href="#icon-google110"></use></svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script src="https://file.myfontastic.com/3gvcFtnrABfPXimB2v9tVQ/icons.js"></script>
+	<script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('google-map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8,
+          disableDefaultUI: true,
+          // gestureHandling: 'none',
+          styles: [
+		    {
+		        "featureType": "all",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "weight": "2.00"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "all",
+		        "elementType": "geometry.stroke",
+		        "stylers": [
+		            {
+		                "color": "#9c9c9c"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "all",
+		        "elementType": "labels.text",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "landscape",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "color": "#f2f2f2"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "landscape",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "color": "#ffffff"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "landscape.man_made",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "color": "#ffffff"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "poi",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "saturation": -100
+		            },
+		            {
+		                "lightness": 45
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "color": "#eeeeee"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road",
+		        "elementType": "labels.text.fill",
+		        "stylers": [
+		            {
+		                "color": "#7b7b7b"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road",
+		        "elementType": "labels.text.stroke",
+		        "stylers": [
+		            {
+		                "color": "#ffffff"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.highway",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "visibility": "simplified"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.arterial",
+		        "elementType": "labels.icon",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "transit",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "water",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "color": "#46bcec"
+		            },
+		            {
+		                "visibility": "on"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "water",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "color": "#c8d7d4"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "water",
+		        "elementType": "labels.text.fill",
+		        "stylers": [
+		            {
+		                "color": "#070707"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "water",
+		        "elementType": "labels.text.stroke",
+		        "stylers": [
+		            {
+		                "color": "#ffffff"
+		            }
+		        ]
+		    }
+		]
+        });
+      }
+    </script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKB8wZn-ZYyPLbax_hv3YiU7-oXdT970Q&callback=initMap"
+    async defer></script>
+</body>
+</html>
