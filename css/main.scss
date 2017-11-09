@@ -7,6 +7,7 @@ $font-size: 16px;
 
 $color-input-bg: #ececec;
 $color-text: #333;
+$color-link: #0868ac;
 $grey: #d4d4d4;
 $red: #d9372c;
 $color-secondary: null;
@@ -111,6 +112,8 @@ body {
 }
 .container {
 	@include center-block;
+	padding-left: 20px;
+	padding-right: 20px;
 	width: $container;
 	&.container-sm {
 		width: $container * .6;
@@ -118,6 +121,9 @@ body {
 }
 .clearfix {
 	clear: both;
+}
+a {
+	color: $color-link;
 }
 button {
 	padding: 0;
@@ -376,6 +382,17 @@ header {
 
 footer {
 	background-color: #323139;
+	color: #fff;
+	a {
+		color: inherit;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	[class^="icon-"] {
+		@include square(40px);
+	}
 }
 
 
@@ -479,5 +496,11 @@ footer {
 		&:nth-child(6n) ~ li {
 			border-bottom: none;
 		}
+	}
+}
+.fun-stats {
+	svg {
+		width: 45px;
+		height: 45px;
 	}
 }
