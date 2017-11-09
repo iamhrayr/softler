@@ -103,12 +103,16 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
 * {
 	box-sizing: border-box;
 }
+::selection {
+    background: #f1bdbd;
+    color: #fff;
+}
 body {
 	font-family: $font-primary;
 	font-size: $font-size;
 	font-weight: 300;
 	line-height: 1.5;
-	min-width: 1070px;
+	// min-width: 1070px;
 	background-color: #f7f7f7;
 	color: $color-text;
 }
@@ -116,7 +120,7 @@ body {
 	@include center-block;
 	padding-left: 20px;
 	padding-right: 20px;
-	width: $container;
+	max-width: $container;
 	&.container-sm {
 		width: $container * .6;
 	}
@@ -445,8 +449,25 @@ textarea.form-control {
 
 
 header {
+	z-index: 121;
+	.hamburger {
+		top: 0;
+		right: 0;
+	}
 	.hamburger-btn {
 		color: #fff;
+	}
+	.container {
+		position: relative;
+	}
+}
+.global-menu-item {
+	@extend .font-secondary;
+	text-decoration: none;
+	font-weight: 600;
+	color: #fff;
+	&:hover {
+		color: $grey;
 	}
 }
 
@@ -503,7 +524,7 @@ footer {
 	padding-left: 85px;
 	position: relative;
 	margin-bottom: 110px;
-	&:before {
+	&:after {
 		content: '';
 		position: absolute;
 		left: 4px;
@@ -528,7 +549,7 @@ footer {
 	}
 	&.no-before-line {
 		padding-left: 0;
-		&:before {
+		&:after {
 			display: none;
 		}
 	}
